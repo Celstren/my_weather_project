@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:my_project/core/ui/profile_component.dart';
+import 'package:my_project/core/ui/user_fototipo_component.dart';
 import 'package:my_project/data/viewmodels/fototipo_option.dart';
 import 'package:my_project/helper/ui/ui_library.dart';
 import 'package:my_project/views/children/create/pages/page_three/components/fototipo_option_component.dart';
@@ -33,19 +35,7 @@ class _ChildrenUpdateViewState extends State<ChildrenUpdateView> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: <Widget>[
-                      Container(
-                        decoration: const BoxDecoration(
-                          shape: BoxShape.circle,
-                          color: Colors.red,
-                        ),
-                      ),
-                      const SizedBox(height: 6),
-                      const Text('Nombre'),
-                    ],
-                  ),
+                  const ProfileComponent(),
                   Column(
                     children: const <Widget>[
                       Icon(Icons.camera_alt, size: 40),
@@ -76,25 +66,7 @@ class _ChildrenUpdateViewState extends State<ChildrenUpdateView> {
                     style: const TextStyle(),
                   ),
                   const SizedBox(height: 20),
-                  const Text('El fototipo de Karla según la escala de Fitzpatrick es logotipo II'),
-                  const SizedBox(height: 10),
-                  Row(
-                    children: <Widget>[
-                      FototipoOptionComponent(model: model),
-                      const SizedBox(width: 60),
-                      Row(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: const <Widget>[
-                          Icon(
-                            Icons.edit,
-                            size: 30,
-                          ),
-                          SizedBox(width: 50),
-                          Text('Cambiar fototipo'),
-                        ],
-                      ),
-                    ],
-                  ),
+                  UserFototipoComponent(model: model),
                   const SizedBox(height: 60),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,

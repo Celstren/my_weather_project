@@ -18,24 +18,24 @@ class _UserLocationViewState extends State<UserLocationView> {
   @override
   Widget build(BuildContext context) {
     return AppScaffold(
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 10),
-        child: SingleChildScrollView(
-          child: Column(
-            children: <Widget>[
-              const SizedBox(height: 30),
-              Align(
-                alignment: Alignment.centerLeft,
-                child: Text('Hola $username, $greetings'),
-              ),
-              const SizedBox(height: 60),
-              children.isEmpty
-                  ? NoChildrenComponent(appName: appName)
-                  : const SizedBox(),
-            ],
+      body: SingleChildScrollView(
+          child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 10),
+              child: Column(
+              children: <Widget>[
+                const SizedBox(height: 30),
+                Align(
+                  alignment: Alignment.centerLeft,
+                  child: Text('Hola $username, $greetings'),
+                ),
+                const SizedBox(height: 60),
+                children.isEmpty
+                    ? NoChildrenComponent(appName: appName)
+                    : const SizedBox(),
+              ],
+            ),
           ),
         ),
-      ),
     );
   }
 }

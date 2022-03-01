@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:my_project/views/children/create/children_create_view.dart';
+import 'package:my_project/router/app_router.gr.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
 class MainCommon extends StatelessWidget {
-  const MainCommon({Key? key}) : super(key: key);
+  final _appRouter = AppRouter();
+  MainCommon({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
       title: 'Flutter Demo',
+      routerDelegate: _appRouter.delegate(),
+      routeInformationParser: _appRouter.defaultRouteParser(),
       debugShowCheckedModeBanner: false,
       localizationsDelegates: const [
         GlobalMaterialLocalizations.delegate,
@@ -22,7 +25,6 @@ class MainCommon extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const ChildrenCreateView(),
     );
   }
 }

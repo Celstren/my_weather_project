@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:my_project/data/viewmodels/fototipo_option.dart';
 
 class FototipoOptionComponent extends StatelessWidget {
-  final FototipoOptionViewmodel model;
+  final FototipoOptionViewmodel? model;
   const FototipoOptionComponent({
     Key? key,
-    required this.model,
+    this.model,
   }) : super(key: key);
 
   @override
@@ -26,7 +26,7 @@ class FototipoOptionComponent extends StatelessWidget {
           ),
           const SizedBox(height: 4),
           Text(
-            model.name,
+            model?.name ?? '',
             textAlign: TextAlign.center,
           ),
         ],
