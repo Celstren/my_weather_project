@@ -30,7 +30,7 @@ class _EditCommentViewState extends State<EditCommentView> {
                 child: Text("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenea"),
               ),
 
-              
+
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
