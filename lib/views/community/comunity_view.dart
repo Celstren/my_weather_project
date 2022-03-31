@@ -50,6 +50,7 @@ class _CommunityViewState extends State<CommunityView> {
                                 Text("hace 15 min"),
                                 IconButton(
                                     onPressed: () {},
+                                    splashRadius: 5,
                                     icon: Icon(Icons.more_vert))
                               ],
                             ),
