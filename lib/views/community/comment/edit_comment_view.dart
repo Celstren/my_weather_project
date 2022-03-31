@@ -23,6 +23,31 @@ class _EditCommentViewState extends State<EditCommentView> {
 
   var textController = '';
 
+
+  confirmDeleteDialog(){
+    return showDialog(context: context, builder: (context) {
+      return AlertDialog(
+        title: Text("Confirmación de eliminacion"),
+        content: Text("¿Estas seguro que quieres eliminar tu comentario?"),
+        actions: [
+          TextButton(
+              onPressed: (){
+                //Navigator.of(context).pop();
+
+              },
+              child: Text("Si")),
+          TextButton(
+              onPressed: (){
+                Navigator.of(context).pop();
+              },
+              child: Text("No")),
+
+        ],
+      );
+    }, barrierDismissible: false);
+  }
+
+
   @override
   Widget build(BuildContext context) {
     return AppScaffold(
@@ -33,8 +58,12 @@ class _EditCommentViewState extends State<EditCommentView> {
 
             ActionCommentComponent(textAction: textAction,action: action),
             Row(
+              //mainAxisAlignment: MainAxisAlignment.start,
+              //mainAxisSize: MainAxisSize.min,
               children: [
-                IconButton(onPressed: () {}, icon: Icon(Icons.delete_outline)),
+                IconButton(onPressed: () {confirmDeleteDialog();},
+                    icon: Icon(Icons.delete_outline)),
+                //SizedBox(width: 0),
                 Text("Eliminar")
               ],
             ),

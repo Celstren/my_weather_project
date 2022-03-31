@@ -67,8 +67,8 @@ class AppRouter extends _i8.RootStackRouter {
             path: '/children-update-view'),
         _i8.RouteConfig(UserLocationRoute.name, path: '/user-location-view'),
         _i8.RouteConfig(UserLocationRoute.name, path: '/user-location-view'),
-        _i8.RouteConfig(CommentRoute.name, path: '/'),
-        _i8.RouteConfig(EditCommentRoute.name, path: '/edit-comment-view')
+        _i8.RouteConfig(CommentRoute.name, path: '/comment-view'),
+        _i8.RouteConfig(EditCommentRoute.name, path: '/')
       ];
 }
 
@@ -119,7 +119,7 @@ class UserLocationRoute extends _i8.PageRouteInfo<void> {
 /// generated route for
 /// [_i6.CommentView]
 class CommentRoute extends _i8.PageRouteInfo<void> {
-  const CommentRoute() : super(CommentRoute.name, path: '/');
+  const CommentRoute() : super(CommentRoute.name, path: '/comment-view');
 
   static const String name = 'CommentRoute';
 }
@@ -127,8 +127,7 @@ class CommentRoute extends _i8.PageRouteInfo<void> {
 /// generated route for
 /// [_i7.EditCommentView]
 class EditCommentRoute extends _i8.PageRouteInfo<void> {
-  const EditCommentRoute()
-      : super(EditCommentRoute.name, path: '/edit-comment-view');
+  const EditCommentRoute() : super(EditCommentRoute.name, path: '/');
 
   static const String name = 'EditCommentRoute';
 }
