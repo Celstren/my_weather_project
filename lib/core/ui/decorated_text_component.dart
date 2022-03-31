@@ -12,6 +12,7 @@ class DecoratedTextComponent extends StatelessWidget {
         border: Border.all(color: Colors.black, width: 1.5),
       ),
       child: Text(text),
+      width: 150,
     );
   }
 }
