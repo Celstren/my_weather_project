@@ -1,5 +1,6 @@
 
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class TextCommentComponent extends StatelessWidget {
@@ -15,6 +16,7 @@ class TextCommentComponent extends StatelessWidget {
     return Padding(
       padding: EdgeInsets.all(6),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(titleComment),
           Container(

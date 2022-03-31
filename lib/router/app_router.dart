@@ -16,8 +16,8 @@ import 'package:my_project/views/user/location/user_location_view.dart';
     AutoRoute(page: ChildrenUpdateView),
     AutoRoute(page: UserLocationView),
     AutoRoute(page: UserLocationView),
-    AutoRoute(page: CommentView),
-    AutoRoute(page: EditCommentView, initial: true),
+    AutoRoute(page: CommentView, initial: true),
+    AutoRoute(page: EditCommentView),
   ],        
 )        
 class $AppRouter {} 

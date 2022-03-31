@@ -4,8 +4,7 @@ import 'package:flutter/material.dart';
 class InputCommentComponent extends StatefulWidget {
 
   final String inputText;
-  final String textController;
-  const InputCommentComponent({Key? key, this.inputText = '', this.textController=''}) : super(key: key);
+  const InputCommentComponent({Key? key, this.inputText = ''}) : super(key: key);
 
   @override
   State<InputCommentComponent> createState() => _InputCommentComponentState();
@@ -17,14 +16,14 @@ class _InputCommentComponentState extends State<InputCommentComponent> {
 
   @override
   void initState() {
-    _controller = TextEditingController(text: widget.textController);
+    _controller = TextEditingController(text: widget.inputText);
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(right: 4.0),
+      padding: const EdgeInsets.only(left: 6.0, right: 6.0),
       child: ConstrainedBox(
         constraints: BoxConstraints(maxHeight: 80),//width: 300,
         child: TextField(

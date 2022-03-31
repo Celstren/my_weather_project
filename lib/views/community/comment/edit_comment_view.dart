@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:my_project/helper/ui/ui_library.dart';
+import 'package:my_project/views/community/comment/components/action_comment_component.dart';
+import 'package:my_project/views/community/comment/components/input_comment_component.dart';
+import 'package:my_project/views/community/comment/components/text_comment_component.dart';
 
 
 class EditCommentView extends StatefulWidget {
@@ -12,70 +15,31 @@ class EditCommentView extends StatefulWidget {
 class _EditCommentViewState extends State<EditCommentView> {
 
   var _controller = TextEditingController();
+  final titleComment = "Edita tu comentario del Post de Pablo Lopez";
+  final textComment = "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenea";
+
+  final textAction = "Actualiza tu comentario aqui: ";
+  final action = "Actualizar";
+
+  var textController = '';
 
   @override
   Widget build(BuildContext context) {
     return AppScaffold(
-        body: Padding(
-          padding: EdgeInsets.all(6),
-          child: Column(
-            children: [
-              Text("Edita tu comentario del post de Pablo Lopez"),
-              Container(
-                padding: EdgeInsets.all(6.0),
-                margin:  EdgeInsets.all(3.0),
-                decoration: BoxDecoration(
-                    border: Border.all()
-                ),
-                child: Text("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenea"),
-              ),
+        body: Column(
+          children: [
+            TextCommentComponent(titleComment: titleComment,textComment: textComment,),
 
 
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text("Actualiza tu comentario aqui:"),
-
-                  Row(
-                    children: [
-                      Text("Actualizar"),
-                      IconButton(
-                          icon: Icon(Icons.send),
-                          onPressed: () {
-                          }),
-                    ],
-                  )
-                ],
-              ),
-              Row(
-                children: [
-                  IconButton(onPressed: () {}, icon: Icon(Icons.delete_outline)),
-                  Text("Eliminar")
-                ],
-              ),
-              ConstrainedBox(
-                constraints: BoxConstraints(maxHeight: 80),//width: 300,
-                child: TextField(
-                  //style: TextStyle(color: Colors.white,),
-                  maxLines: null,
-                  maxLength: 200,
-                  controller: _controller,
-                  cursorColor: Colors.black,
-                  decoration: InputDecoration(
-                      hintText: "Escribir comentario",
-                      fillColor: Colors.blue, filled: true,
-                      isDense: true,
-                      contentPadding: EdgeInsets.all(15),
-                      border: OutlineInputBorder(
-                          borderSide: BorderSide.none,
-                          borderRadius: BorderRadius.all(Radius.circular(20))
-                      )
-                  ),
-                ),
-
-              ),
-            ],
-          ),
+            ActionCommentComponent(textAction: textAction,action: action),
+            Row(
+              children: [
+                IconButton(onPressed: () {}, icon: Icon(Icons.delete_outline)),
+                Text("Eliminar")
+              ],
+            ),
+            InputCommentComponent(inputText: textController,)
+          ],
         ));
 
 
