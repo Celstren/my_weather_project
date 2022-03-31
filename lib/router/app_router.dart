@@ -4,6 +4,7 @@ import 'package:my_project/views/auth/login/login_view.dart';
 import 'package:my_project/views/children/create/children_create_view.dart';
 import 'package:my_project/views/children/update/children_update_view.dart';
 import 'package:my_project/views/community/comment/comment_view.dart';
+import 'package:my_project/views/community/comment/edit_comment_view.dart';
 import 'package:my_project/views/user/location/user_location_view.dart';
 
 @MaterialAutoRouter(
@@ -15,7 +16,8 @@ import 'package:my_project/views/user/location/user_location_view.dart';
     AutoRoute(page: ChildrenUpdateView),
     AutoRoute(page: UserLocationView),
     AutoRoute(page: UserLocationView),
-    AutoRoute(page: CommentView, initial: true),
+    AutoRoute(page: CommentView),
+    AutoRoute(page: EditCommentView, initial: true),
   ],        
 )        
 class $AppRouter {} 
