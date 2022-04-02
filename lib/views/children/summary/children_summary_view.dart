@@ -14,63 +14,38 @@ class _ChildrenSummaryViewState extends State<ChildrenSummaryView> {
   @override
   Widget build(BuildContext context) {
     return AppScaffold(
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 10),
-          child: Column(
+        body: SingleChildScrollView(
+      child: Padding(
+        padding: EdgeInsets.symmetric(horizontal: 10),
+        child: Column(
           children: <Widget>[
-            Row(
+            Column(
               mainAxisSize: MainAxisSize.max,
               children: <Widget>[
                 const ProfileComponent(),
-                Column(
-                  children: <Widget>[
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: <Widget>[
-                        Column(
-                          children: <Widget>[
-                            Text('Datos del menor'),
-                            SizedBox(height: 10),
-                          ],
-                        ),
-                        Icon(
-                          Icons.edit,
-                          size: 40,
-                          color: Colors.black,
-                        ),
-                      ],
-                    ),
-                    Text('Nombre Completo: Karla Silvia Lopez'),
-                    Text('Fecha de Nacimiento: 15 de Octubre del 2014'),
-                    Text('Edad: 7 años'),
-                    Align(
-                      alignment: Alignment.centerRight,
-                      child: Icon(
-                        Icons.delete,
-                        color: Colors.black,
-                        size: 30,
-                      ),
-                    ),
-                  ],
-                ),
               ],
             ),
-            Container(
-              width: MediaQuery.of(context).size.width,
-              height: 1.5,
-              color: Colors.black,
+            Divider(
+              height: 40,
+              color: Color.fromARGB(255, 116, 114, 114),
+              thickness: 2,
             ),
-            const UserFototipoComponent(),
+            UserFototipoComponent(),
             SizedBox(height: 30),
-            Text('Más información: https://www.dermcollective.com/flitzpatrick.skin-types/'),
-            Container(
-              width: MediaQuery.of(context).size.width,
-              height: 1.5,
-              color: Colors.black,
+            Text(
+              'Más información: https://www.dermcollective.com/flitzpatrick.skin-types/',
+              style: TextStyle(color: Colors.blue),
             ),
+            Divider(
+              height: 40,
+              color: Color.fromARGB(255, 116, 114, 114),
+              thickness: 2,
+            ),
+            
             Text('Recomendaciones e indicaciones para su hijo'),
+            SizedBox(height: 10),
             Container(
+              
               decoration: BoxDecoration(
                 border: Border.all(color: Colors.black, width: 1),
               ),
@@ -78,8 +53,9 @@ class _ChildrenSummaryViewState extends State<ChildrenSummaryView> {
                 children: <Widget>[
                   Container(
                     decoration: BoxDecoration(
-                      color: Colors.blueAccent,
-                      border: Border(bottom: BorderSide(color: Colors.black, width: 1)),
+                      color: Color.fromARGB(255, 180, 206, 252),
+                      border: Border(
+                          bottom: BorderSide(color: Colors.black, width: 1)),
                     ),
                     child: Align(
                       alignment: Alignment.centerLeft,
@@ -88,29 +64,35 @@ class _ChildrenSummaryViewState extends State<ChildrenSummaryView> {
                   ),
                   Container(
                     decoration: BoxDecoration(
-                      border: Border(bottom: BorderSide(color: Colors.black, width: 1)),
+                      border: Border(
+                          bottom: BorderSide(color: Colors.black, width: 1)),
                     ),
                     child: Align(
                       alignment: Alignment.centerLeft,
-                      child: Text('Según el fototipo de su hijo, se recomienda que esté entre 10 a 15 minutos como máximo expuesto al sol'),
+                      child: Text(
+                          'Según el fototipo de su hijo, se recomienda que esté entre 10 a 15 minutos como máximo expuesto al sol'),
                     ),
                   ),
                   Container(
                     decoration: BoxDecoration(
-                      border: Border(bottom: BorderSide(color: Colors.black, width: 1)),
+                      border: Border(
+                          bottom: BorderSide(color: Colors.black, width: 1)),
                     ),
                     child: Align(
                       alignment: Alignment.centerLeft,
-                      child: Text('¿Qué zonas de mi hijo debo proteger del sol?'),
+                      child:
+                          Text('¿Qué zonas de mi hijo debo proteger del sol?'),
                     ),
                   ),
                   Container(
                     decoration: BoxDecoration(
-                      border: Border(bottom: BorderSide(color: Colors.black, width: 1)),
+                      border: Border(
+                          bottom: BorderSide(color: Colors.black, width: 1)),
                     ),
                     child: Align(
                       alignment: Alignment.centerLeft,
-                      child: Text('¿Cómo saber si la piel de mi hijo ha sido afectada por el sol?'),
+                      child: Text(
+                          '¿Cómo saber si la piel de mi hijo ha sido afectada por el sol?'),
                     ),
                   ),
                 ],
@@ -118,8 +100,7 @@ class _ChildrenSummaryViewState extends State<ChildrenSummaryView> {
             ),
           ],
         ),
-        ),
-      )
-    );
+      ),
+    ));
   }
 }

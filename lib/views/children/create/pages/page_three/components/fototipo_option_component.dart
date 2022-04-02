@@ -12,7 +12,7 @@ class FototipoOptionComponent extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: 100,
-      child: Column(
+      child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
           Container(

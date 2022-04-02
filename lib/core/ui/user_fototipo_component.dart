@@ -8,28 +8,34 @@ class UserFototipoComponent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return Container(
+        child: Column(
       children: <Widget>[
-        const Text('El fototipo de Karla según la escala de Fitzpatrick es logotipo II'),
-        const SizedBox(height: 10),
+        Text("El fototipo de Karla según la escala fitzpatrcik es fototipo II"),
         Row(
-          children: <Widget>[
-            FototipoOptionComponent(model: model),
-            const SizedBox(width: 60),
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: const <Widget>[
-                Icon(
-                  Icons.edit,
-                  size: 30,
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            Column(
+              children: <Widget>[
+                Container(
+                  height: 80,
+                  width: 80,
+                  decoration: BoxDecoration(
+                    color: Colors.red,
+                    shape: BoxShape.circle,
+                  ),
                 ),
-                SizedBox(width: 50),
-                Text('Cambiar fototipo'),
+                Text('White, fair'),
               ],
             ),
+            Container(
+              width: 200,
+              child: Text(
+                  'La caracteristica de este fototipo es que generalmente se quema y broncea con dificultad'),
+            )
           ],
-        ),
+        )
       ],
-    );
+    ));
   }
 }

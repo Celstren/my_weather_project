@@ -5,17 +5,38 @@ class ProfileComponent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: <Widget>[
-        Container(
-          decoration: const BoxDecoration(
-            shape: BoxShape.circle,
-            color: Colors.red,
+    return Row(
+      children: [
+        Column(children: <Widget>[
+          Icon(
+            Icons.person,
+            size: 100,
           ),
-        ),
-        const SizedBox(height: 6),
-        const Text('Nombre'),
+          Text('Karla'),
+        ]),
+        Container(
+            child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text('Datos del menor',
+                    style: TextStyle(fontWeight: FontWeight.bold)),
+                Icon(
+                  Icons.edit,
+                  size: 30,
+                ),
+              ],
+            ),
+            Text('Nombre completo: Karla Silvia Lopez'),
+            Text('Fecha Nacimiento: 15 Octubre de 2014'),
+            Text('Edad 7 años'),
+            Icon(
+              Icons.delete,
+            ),
+          ],
+        )),
       ],
     );
   }
