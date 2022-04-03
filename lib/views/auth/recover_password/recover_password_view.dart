@@ -15,10 +15,116 @@ class _RecoverPasswordView extends State<RecoverPasswordView> {
   final TextEditingController passwordController = TextEditingController();
   final FocusNode passwordFocusNode = FocusNode();
 
-  final TextStyle style = const TextStyle();
+  final TextEditingController passwordControllerConfirmed = TextEditingController();
+  final FocusNode passwordFocusNodeConfirmed = FocusNode();
+
+  final TextStyle style = TextStyle();
+
+  late int pageState = 1;
+
+
+  Widget Message(int state){
+    switch (state) {
+      case 1:
+        return Column(
+          children: [
+            Text("Enter the registered Email to the account",
+              style: TextStyle(color: Colors.red),),
+            const SizedBox(height: 20),
+          ],
+        );
+      case 2:
+        return Column(
+        children: [
+          Text("This email does not have a registered account",
+            style: TextStyle(color: Colors.red),),
+          const SizedBox(height: 20),
+        ],
+      );
+      default:
+        return const SizedBox();
+    }
+  }
+
+  Widget FieldsAndButtonsToStates(int state) {
+    switch (state) {
+      case 1:
+        return Column(
+          children: [
+            AppButton(
+              text: 'Send',
+              onPressed: () {
+                setState(() {
+                  pageState = ++pageState;
+                });
+                print('recover password');
+              },
+            ),
+            const SizedBox(height: 20),
+            AppButton(
+              text: 'ReSend',
+              onPressed: () {
+                print('recover password');
+              },
+            ),
+            const SizedBox(height: 60),
+          ],
+        );
+      case 2:
+        return Column(
+          children: [
+            AppButton(
+              text: 'Send',
+              onPressed: () {
+                setState(() {
+                  pageState = ++pageState;
+                });
+                print('recover password');
+              },
+            ),
+            const SizedBox(height: 60),
+          ],
+        );
+      default:
+        return Column(
+          children: [
+            AppTextForm(
+              width: 300,
+              controller: passwordController,
+              focusNode: passwordFocusNode,
+              style: style,
+              preffix: Icons.vpn_key,
+            ),
+            const SizedBox(height: 20),
+            AppTextForm(
+              width: 300,
+              controller: passwordControllerConfirmed,
+              focusNode: passwordFocusNodeConfirmed,
+              style: style,
+              preffix: Icons.vpn_key,
+            ),
+            const SizedBox(height: 80),
+            AppButton(
+              text: 'Recover',
+              onPressed: () {
+                print('recover password');
+              },
+            ),
+            const SizedBox(height: 60),
+            Text("change correctly!"),
+            const SizedBox(height: 60),
+          ],
+        );
+
+    }
+  }
+
+
+
 
   @override
   Widget build(BuildContext context) {
+
     return SafeArea(
       child: Scaffold(
         body: SingleChildScrollView(
@@ -33,44 +139,17 @@ class _RecoverPasswordView extends State<RecoverPasswordView> {
                   child: Text('Recover password'),
                 ),
                 const SizedBox(height: 20),
+                Message(pageState),
+                const SizedBox(height: 20),
                 AppTextForm(
                   width: 300,
                   controller: emailController,
                   focusNode: emailFocusNode,
                   style: style,
-                  preffix: Icons.vpn_key,
+                  preffix: Icons.email_outlined,
                 ),
                 const SizedBox(height: 20),
-                AppTextForm(
-                  width: 300,
-                  controller: passwordController,
-                  focusNode: passwordFocusNode,
-                  style: style,
-                  preffix: Icons.vpn_key,
-                ),
-                const SizedBox(height: 20),
-                AppTextForm(
-                  width: 300,
-                  controller: passwordController,
-                  focusNode: passwordFocusNode,
-                  style: style,
-                  preffix: Icons.vpn_key,
-                ),
-                const SizedBox(height: 80),
-                AppButton(
-                  text: 'Send',
-                  onPressed: () {
-                    print('recover password');
-                  },
-                ),
-                const SizedBox(height: 20),
-                AppButton(
-                  text: 'ReSend',
-                  onPressed: () {
-                    print('recover password');
-                  },
-                ),
-                const SizedBox(height: 60),
+                FieldsAndButtonsToStates(pageState),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: const <Widget>[
