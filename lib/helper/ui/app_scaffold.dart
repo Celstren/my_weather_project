@@ -15,10 +15,11 @@ class AppScaffold extends StatelessWidget {
         leading: const Icon(Icons.person, color: Colors.white),
         title: const Icon(Icons.ac_unit, color: Colors.white),
         centerTitle: true,
-        actions: const <Widget>[
+        actions:  <Widget>[
           Padding(
-            padding: EdgeInsets.only(right: 15),
-            child: Icon(Icons.settings, color: Colors.white),
+            padding: const EdgeInsets.only(right: 15),
+            child: PopUpSettingMenu(settingAction: () {}, logoutAction: () {}
+            )
           ),
         ],
       ),

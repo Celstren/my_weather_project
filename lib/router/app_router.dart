@@ -13,8 +13,8 @@ import 'package:my_project/views/user/location/user_location_view.dart';
     AutoRoute(page: CreateAccountView),
     AutoRoute(page: ChildrenCreateView),
     AutoRoute(page: ChildrenUpdateView),
-    AutoRoute(page: UserLocationView),
-    AutoRoute(page: RecoverPasswordView, initial: true)
+    AutoRoute(page: UserLocationView, initial: true),
+    AutoRoute(page: RecoverPasswordView)
   ],        
 )        
 class $AppRouter {} 
