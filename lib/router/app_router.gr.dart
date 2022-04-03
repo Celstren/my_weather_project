@@ -60,9 +60,8 @@ class AppRouter extends _i7.RootStackRouter {
             path: '/children-create-view'),
         _i7.RouteConfig(ChildrenUpdateRoute.name,
             path: '/children-update-view'),
-        _i7.RouteConfig(UserLocationRoute.name, path: '/'),
-        _i7.RouteConfig(RecoverPasswordRoute.name,
-            path: '/recover-password-view')
+        _i7.RouteConfig(UserLocationRoute.name, path: '/user-location-view'),
+        _i7.RouteConfig(RecoverPasswordRoute.name, path: '/')
       ];
 }
 
@@ -104,7 +103,8 @@ class ChildrenUpdateRoute extends _i7.PageRouteInfo<void> {
 /// generated route for
 /// [_i5.UserLocationView]
 class UserLocationRoute extends _i7.PageRouteInfo<void> {
-  const UserLocationRoute() : super(UserLocationRoute.name, path: '/');
+  const UserLocationRoute()
+      : super(UserLocationRoute.name, path: '/user-location-view');
 
   static const String name = 'UserLocationRoute';
 }
@@ -112,8 +112,7 @@ class UserLocationRoute extends _i7.PageRouteInfo<void> {
 /// generated route for
 /// [_i6.RecoverPasswordView]
 class RecoverPasswordRoute extends _i7.PageRouteInfo<void> {
-  const RecoverPasswordRoute()
-      : super(RecoverPasswordRoute.name, path: '/recover-password-view');
+  const RecoverPasswordRoute() : super(RecoverPasswordRoute.name, path: '/');
 
   static const String name = 'RecoverPasswordRoute';
 }
